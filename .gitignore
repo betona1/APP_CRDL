@@ -5,3 +5,4 @@ build/
 .dart_tool/
 .env
 .claude/settings.local.json
+media/
