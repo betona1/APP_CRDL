@@ -15,8 +15,15 @@ CRDL 레벨 생성기
   python crdl_levelgen.py --self-test
 """
 from __future__ import annotations
-import argparse, json, random
+import argparse, json, random, sys
 from typing import List, Tuple, Dict
+
+# Windows cp949 콘솔에서도 한글/특수문자 출력이 깨지지 않도록
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 Cell = Tuple[int, int]
 DIRS = ((1, 0), (-1, 0), (0, 1), (0, -1))

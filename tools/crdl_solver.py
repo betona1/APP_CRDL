@@ -20,7 +20,15 @@ CRDL 패턴 솔버 / 검증기
   parse_grid에 다중문자 토큰을 쓰려면 공백으로 구분된 격자를 넘기세요.
 """
 from __future__ import annotations
+import sys
 from typing import Dict, List, Optional, Tuple
+
+# Windows cp949 콘솔에서도 한글 출력이 깨지지 않도록
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 Cell = Tuple[int, int]
 DIRS = ((-1, 0), (1, 0), (0, -1), (0, 1))
