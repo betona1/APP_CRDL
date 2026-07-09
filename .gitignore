@@ -6,3 +6,5 @@ build/
 .env
 .claude/settings.local.json
 media/
+# 앱 등록/출시 관련 내부 문서 (공개 저장소에 올리지 않음)
+private/
