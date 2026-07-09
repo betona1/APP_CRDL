@@ -3,9 +3,11 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/audio.dart';
 import 'core/controller.dart';
 import 'core/progress.dart';
+import 'l10n/app_localizations.dart';
 import 'ui/theme.dart';
 import 'ui/title_screen.dart';
 
@@ -27,9 +29,16 @@ class CrdlApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CRDL — 차례대로',
+      onGenerateTitle: (context) => L10n.of(context).appTitle,
       debugShowCheckedModeBanner: false,
       theme: crdlTheme(),
+      localizationsDelegates: const [
+        L10n.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: L10n.supportedLocales,
       home: TitleScreen(ctl: controller),
     );
   }

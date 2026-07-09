@@ -134,10 +134,11 @@ class GameController extends ChangeNotifier {
       _watch.stop();
       _tick?.cancel();
       audio.play(Sfx.lose);
+      // 로컬라이즈 키. UI에서 현재 언어 문자열로 변환한다.
       loseReason = switch (res) {
-        MoveResult.lostDeadEnd => '막다른 길! 더 이상 이동할 수 없어요.',
-        MoveResult.lostTrapped => '미로처럼 엉켰어요. 갇힌 칸이 생겼습니다.',
-        MoveResult.lostNumberCut => '다음 숫자로 가는 길이 막혔어요.',
+        MoveResult.lostDeadEnd => 'deadEnd',
+        MoveResult.lostTrapped => 'trapped',
+        MoveResult.lostNumberCut => 'numberCut',
         _ => null,
       };
       phase = ClearPhase.banner;

@@ -8,9 +8,32 @@ import 'package:flutter/services.dart';
 import '../core/audio.dart';
 import '../core/controller.dart';
 import '../core/game.dart';
+import '../l10n/app_localizations.dart';
 import 'board_painter.dart';
 import 'mascot.dart';
 import 'theme.dart';
+
+/// 난이도 티어 키 → 현재 언어 문자열.
+String tierName(L10n l, String key) => switch (key) {
+      'tutorial1' => l.tierTutorial1,
+      'tutorial2' => l.tierTutorial2,
+      'tutorial3' => l.tierTutorial3,
+      'first' => l.tierFirst,
+      'beginner' => l.tierBeginner,
+      'easy' => l.tierEasy,
+      'normal' => l.tierNormal,
+      'hard' => l.tierHard,
+      'master' => l.tierMaster,
+      _ => key,
+    };
+
+/// 패배 사유 키 → 현재 언어 문자열.
+String loseReasonText(L10n l, String key) => switch (key) {
+      'deadEnd' => l.loseDeadEnd,
+      'trapped' => l.loseTrapped,
+      'numberCut' => l.loseNumberCut,
+      _ => '',
+    };
 
 class GameScreen extends StatefulWidget {
   final GameController ctl;
@@ -194,7 +217,7 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
           const SizedBox(width: 10),
           Expanded(
             child: Text(
-              '${ctl.genre == Genre.fill ? "⛏" : "✏"} 판 #${ctl.stage} · ${ctl.config.tier}',
+              '${ctl.genre == Genre.fill ? "⛏" : "✏"} ${L10n.of(context).boardHeader(ctl.stage, tierName(L10n.of(context), ctl.config.tier))}',
               style: const TextStyle(fontSize: 12, color: C.muted),
               overflow: TextOverflow.ellipsis,
             ),
@@ -226,6 +249,7 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
 
   Widget _hud() {
     final g = ctl.game;
+    final l = L10n.of(context);
     final prog = ctl.genre == Genre.fill
         ? '${g.path.length} / ${g.total}'
         : '${math.min(g.target - 1, g.level.count)} / ${g.level.count}';
@@ -233,12 +257,12 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
       child: Row(
         children: [
-          _hudCard('다음 숫자', g.target > g.level.count ? '완료' : '${g.target}',
+          _hudCard(l.hudNext, g.target > g.level.count ? l.hudDone : '${g.target}',
               valueColor: C.token),
           const SizedBox(width: 7),
-          _hudCard(ctl.genre == Genre.fill ? '채운 칸' : '숫자', prog),
+          _hudCard(ctl.genre == Genre.fill ? l.hudFilled : l.hudNumbers, prog),
           const SizedBox(width: 7),
-          _hudCard('시간', '${ctl.elapsed.toStringAsFixed(1)}s'),
+          _hudCard(l.hudTime, '${ctl.elapsed.toStringAsFixed(1)}s'),
         ],
       ),
     );
@@ -275,19 +299,18 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
   }
 
   Widget _ruleText(bool tutorialWait) {
+    final l = L10n.of(context);
     String text;
     if (tutorialWait) {
-      text = '🐍 숫자 1을 탭하면 뱀이 출발해요!';
+      text = l.coachTapStart;
     } else if (ctl.tutorial && ctl.stage == 1) {
-      text = '✨ 반짝이는 화살표를 따라가요 — 옆 칸 탭·드래그 모두 OK!';
+      text = l.coachArrows;
     } else if (ctl.tutorial && ctl.stage == 2) {
-      text = '🚧 지나온 몸통은 벽! 이번엔 스스로 길을 찾아보세요.';
+      text = l.coachStage2;
     } else if (ctl.tutorial && ctl.stage == 3) {
-      text = '⛏ 모든 칸을 덮어야 클리어! 갇히면 게임 오버.';
+      text = l.coachFill;
     } else {
-      text = ctl.genre == Genre.fill
-          ? '⛏ 모든 칸을 채우면서 숫자를 1→N 순서로. 갇히면 게임 오버.'
-          : '✏ 숫자만 1→N 순서로 이어요. 칸을 다 채울 필요는 없어요.';
+      text = ctl.genre == Genre.fill ? l.ruleFill : l.rulePath;
     }
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
@@ -416,11 +439,12 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
   }
 
   Widget _coachBubble(bool tutorialWait) {
+    final l = L10n.of(context);
     final text = ctl.stage == 1
-        ? '🐍 숫자 1을 탭하면 뱀이 출발해요!'
+        ? l.coachTapStart
         : ctl.stage == 2
-            ? '조금 더 넓어졌어요. 숫자 1을 탭!'
-            : '마지막 연습! 숫자 1을 탭!';
+            ? l.tutorialWider
+            : l.tutorialLast;
     return Positioned(
       top: 4,
       left: 0,
@@ -468,9 +492,9 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
       ),
       const SizedBox(height: 6),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        _textBtn('↩ 되돌리기', ctl.undo),
+        _textBtn(L10n.of(context).undo, ctl.undo),
         const SizedBox(width: 7),
-        _textBtn('🔄 다시', ctl.retry, primary: true),
+        _textBtn(L10n.of(context).restart, ctl.retry, primary: true),
       ]),
     ]);
   }
@@ -514,6 +538,7 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
 
   Widget _banner() {
     final won = ctl.game.won;
+    final l = L10n.of(context);
     return Container(
       color: const Color(0xCC030A0C),
       alignment: Alignment.center,
@@ -533,7 +558,7 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
         ),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           Text(
-            won ? '판 #${ctl.stage} 클리어!' : '게임 오버',
+            won ? l.clearTitle(ctl.stage) : l.gameOver,
             style: TextStyle(
                 fontFamily: uiFont,
                 fontSize: 23,
@@ -543,29 +568,29 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
           const SizedBox(height: 6),
           Text(
             won
-                ? '숫자 1~${ctl.game.level.count}을 차례대로 완성했어요.\n'
-                    '${ctl.game.path.length - 1}이동 · ${ctl.elapsed.toStringAsFixed(1)}초'
-                : '${ctl.loseReason ?? ""}\n되돌리기로 살리거나 다시 도전!',
+                ? l.clearBody(ctl.game.level.count, ctl.game.path.length - 1,
+                    ctl.elapsed.toStringAsFixed(1))
+                : l.loseBody(loseReasonText(l, ctl.loseReason ?? '')),
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 13, color: C.text, height: 1.5),
           ),
           if (won && ctl.newRecord)
-            const Padding(
-              padding: EdgeInsets.only(top: 6),
-              child: Text('🏆 신기록!',
-                  style: TextStyle(fontSize: 12, color: C.token)),
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text(l.newRecord,
+                  style: const TextStyle(fontSize: 12, color: C.token)),
             ),
           const SizedBox(height: 14),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            _textBtn('🗺️ 지도', () => Navigator.of(context).maybePop()),
+            _textBtn(l.toMap, () => Navigator.of(context).maybePop()),
             const SizedBox(width: 8),
             if (won)
-              _textBtn('▶ 다음 판', () {
+              _textBtn(l.nextStage, () {
                 _confetti.reset();
                 ctl.nextStage();
               }, primary: true)
             else
-              _textBtn('🔁 다시 도전', ctl.retry, primary: true),
+              _textBtn(l.retry, ctl.retry, primary: true),
           ]),
         ]),
       ),

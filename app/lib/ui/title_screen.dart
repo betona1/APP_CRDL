@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import '../core/controller.dart';
+import '../l10n/app_localizations.dart';
 import 'map_screen.dart';
 import 'mascot.dart';
 import 'theme.dart';
@@ -37,6 +38,7 @@ class _TitleScreenState extends State<TitleScreen>
 
   void _showGuide() {
     widget.ctl.progress.setOnboarded();
+    final l = L10n.of(context);
     showDialog(
       context: context,
       builder: (ctx) => Dialog(
@@ -54,13 +56,13 @@ class _TitleScreenState extends State<TitleScreen>
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             const Mascot(size: 74),
             const SizedBox(height: 6),
-            const Text('CRDL 시작 가이드',
-                style: TextStyle(fontSize: 20, color: C.head)),
+            Text(l.guideTitle,
+                style: const TextStyle(fontSize: 20, color: C.head)),
             const SizedBox(height: 12),
-            _sec('🎯 목표', '뱀 커서로 격자를 훑으며 숫자를 1 → N 순서대로 밟으세요.'),
-            _sec('🐍 이동 규칙', '상하좌우 이동, 지나간 칸(몸통)은 재통과 불가. 갇히면 게임 오버.'),
-            _sec('⛏ 두 장르', '땅파기 — 모든 칸을 채우면서 완성 (어려움)\n길잇기 — 숫자만 순서대로 이으면 완성 (쉬움)'),
-            _sec('🎮 조작', '숫자 1을 탭해서 시작 → 옆 칸 탭 · 드래그 · D패드 모두 OK.'),
+            _sec(l.guideGoalTitle, l.guideGoalBody),
+            _sec(l.guideMoveTitle, l.guideMoveBody),
+            _sec(l.guideGenreTitle, l.guideGenreBody),
+            _sec(l.guideControlTitle, l.guideControlBody),
             const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
@@ -71,8 +73,8 @@ class _TitleScreenState extends State<TitleScreen>
                   foregroundColor: const Color(0xFF012A22),
                   padding: const EdgeInsets.symmetric(vertical: 12),
                 ),
-                child: const Text('좋아, 시작!',
-                    style: TextStyle(fontFamily: uiFont, fontSize: 15)),
+                child: Text(l.guideOk,
+                    style: const TextStyle(fontFamily: uiFont, fontSize: 15)),
               ),
             ),
           ]),
@@ -98,6 +100,7 @@ class _TitleScreenState extends State<TitleScreen>
   @override
   Widget build(BuildContext context) {
     final ctl = widget.ctl;
+    final l = L10n.of(context);
     return Scaffold(
       body: Container(
         decoration: bgDecoration(),
@@ -125,8 +128,8 @@ class _TitleScreenState extends State<TitleScreen>
                     Shadow(color: Colors.black54, offset: Offset(0, 4)),
                   ],
                 )),
-            const Text('차 · 례 · 대 · 로',
-                style: TextStyle(
+            Text(l.tagline,
+                style: const TextStyle(
                     fontSize: 12, letterSpacing: 6, color: C.muted)),
             const SizedBox(height: 22),
             Container(
@@ -137,7 +140,8 @@ class _TitleScreenState extends State<TitleScreen>
                 border: Border.all(color: C.grid),
               ),
               child: Text(
-                '🏆 최고 판 ${ctl.progress.maxStage(ctl.genre)}  ·  ⭐ ${ctl.progress.totalStars(ctl.genre)}',
+                l.bestBanner(ctl.progress.maxStage(ctl.genre),
+                    ctl.progress.totalStars(ctl.genre)),
                 style: const TextStyle(fontSize: 12, color: C.muted),
               ),
             ),
@@ -154,8 +158,8 @@ class _TitleScreenState extends State<TitleScreen>
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                 ),
-                child: const Text('▶ 모험 시작',
-                    style: TextStyle(
+                child: Text(l.startAdventure,
+                    style: const TextStyle(
                         fontFamily: uiFont,
                         fontSize: 15,
                         fontWeight: FontWeight.w700)),
@@ -174,8 +178,8 @@ class _TitleScreenState extends State<TitleScreen>
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                 ),
-                child: const Text('❓ 게임 방법',
-                    style: TextStyle(fontFamily: uiFont, fontSize: 14)),
+                child: Text(l.howToPlay,
+                    style: const TextStyle(fontFamily: uiFont, fontSize: 14)),
               ),
             ),
           ]),

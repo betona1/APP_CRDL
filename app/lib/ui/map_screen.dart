@@ -6,6 +6,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../core/controller.dart';
 import '../core/game.dart';
+import '../l10n/app_localizations.dart';
 import 'game_screen.dart';
 import 'mascot.dart';
 import 'theme.dart';
@@ -48,22 +49,22 @@ class _MapScreenState extends State<MapScreen> {
   double _nodeY(int s) => _mapHeight - _padBottom - (s - 1) * _spacing;
   double _nodeX(int s, double w) => w / 2 + (w * 0.30) * math.sin((s - 1) * 0.85);
 
-  static String? _tierLabel(int s) => switch (s) {
-        1 => '🎓 튜토리얼',
-        4 => '🌱 첫 실전',
-        5 => '🥉 초급',
-        11 => '🥈 쉬움',
-        26 => '🥇 보통',
-        46 => '🔥 어려움',
-        71 => '👑 고수',
+  static String? _tierLabel(int s, L10n l) => switch (s) {
+        1 => '🎓 ${l.tierTutorial}',
+        4 => '🌱 ${l.tierFirst}',
+        5 => '🥉 ${l.tierBeginner}',
+        11 => '🥈 ${l.tierEasy}',
+        26 => '🥇 ${l.tierNormal}',
+        46 => '🔥 ${l.tierHard}',
+        71 => '👑 ${l.tierMaster}',
         _ => null,
       };
 
   void _openStage(int s) async {
     if (s > ctl.unlocked) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('🔒 이전 판을 먼저 클리어하세요!'),
-        duration: Duration(milliseconds: 900),
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(L10n.of(context).lockedToast),
+        duration: const Duration(milliseconds: 900),
         behavior: SnackBarBehavior.floating,
       ));
       return;
@@ -119,17 +120,17 @@ class _MapScreenState extends State<MapScreen> {
       child: Row(children: [
         const Mascot(size: 28),
         const SizedBox(width: 8),
-        const Text('스테이지',
-            style: TextStyle(
+        Text(L10n.of(context).stagesTitle,
+            style: const TextStyle(
                 fontFamily: numFont,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 2,
                 color: C.head)),
         const Spacer(),
-        _genreTab('⛏ 땅파기', Genre.fill),
+        _genreTab(L10n.of(context).genreFill, Genre.fill),
         const SizedBox(width: 5),
-        _genreTab('✏ 길잇기', Genre.path),
+        _genreTab(L10n.of(context).genrePath, Genre.path),
         const SizedBox(width: 10),
         Text('⭐${ctl.progress.totalStars(ctl.genre)}',
             style: const TextStyle(
@@ -171,7 +172,7 @@ class _MapScreenState extends State<MapScreen> {
     final done = s < unlocked;
     final cur = s == unlocked;
     final stars = done ? (ctl.progress.best(ctl.genre, s)?.stars ?? 1) : 0;
-    final chip = _tierLabel(s);
+    final chip = _tierLabel(s, L10n.of(context));
 
     return [
       if (chip != null)

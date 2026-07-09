@@ -13,7 +13,8 @@ void main() {
     final audio = AudioService(enabled: false); // 테스트는 오디오 미초기화
     await tester.pumpWidget(CrdlApp(controller: GameController(progress, audio)));
     await tester.pump(const Duration(milliseconds: 300));
+    // 기본 테스트 로케일(en)에서 렌더링된다.
     expect(find.text('CRDL'), findsOneWidget);
-    expect(find.text('▶ 모험 시작'), findsOneWidget);
+    expect(find.text('Start Adventure'), findsOneWidget);
   });
 }

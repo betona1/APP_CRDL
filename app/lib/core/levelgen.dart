@@ -105,6 +105,9 @@ Level generate(int rows, int cols, int count, Mulberry32 rng) {
 }
 
 /// 스테이지 → 보드 크기/숫자 개수/티어 (프로토타입 stageConfig와 동일).
+///
+/// [tier]는 표시용 문자열이 아니라 로컬라이즈 키다(예: 'beginner'). UI에서 현재
+/// 언어로 변환한다.
 class StageConfig {
   final int rows, cols, numbers;
   final String tier;
@@ -113,15 +116,15 @@ class StageConfig {
 }
 
 StageConfig stageConfig(int s) {
-  if (s == 1) return const StageConfig(3, 3, 3, '튜토리얼 1/3', tutorial: true);
-  if (s == 2) return const StageConfig(3, 4, 3, '튜토리얼 2/3', tutorial: true);
-  if (s == 3) return const StageConfig(4, 4, 4, '튜토리얼 3/3', tutorial: true);
-  if (s == 4) return const StageConfig(5, 4, 5, '첫 실전');
-  if (s <= 10) return const StageConfig(5, 4, 5, '초급');
-  if (s <= 25) return const StageConfig(6, 5, 6, '쉬움');
-  if (s <= 45) return const StageConfig(8, 6, 10, '보통');
-  if (s <= 70) return const StageConfig(11, 7, 12, '어려움');
-  return const StageConfig(13, 8, 14, '고수');
+  if (s == 1) return const StageConfig(3, 3, 3, 'tutorial1', tutorial: true);
+  if (s == 2) return const StageConfig(3, 4, 3, 'tutorial2', tutorial: true);
+  if (s == 3) return const StageConfig(4, 4, 4, 'tutorial3', tutorial: true);
+  if (s == 4) return const StageConfig(5, 4, 5, 'first');
+  if (s <= 10) return const StageConfig(5, 4, 5, 'beginner');
+  if (s <= 25) return const StageConfig(6, 5, 6, 'easy');
+  if (s <= 45) return const StageConfig(8, 6, 10, 'normal');
+  if (s <= 70) return const StageConfig(11, 7, 12, 'hard');
+  return const StageConfig(13, 8, 14, 'master');
 }
 
 /// 스테이지용 레벨 생성 (프로토타입과 동일한 시드 규칙).
