@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRDL(차례대로) — 숫자를 차례대로 잇는 격자 퍼즐</title>
+<meta name="description" content="숫자를 1→N 순서대로 밟는 귀여운 격자 퍼즐 게임 CRDL. 무료·광고 없음·오프라인.">
+<link rel="icon" href="icon-512.png">
+<meta property="og:title" content="CRDL — 차례대로">
+<meta property="og:description" content="숫자를 1→N 순서대로 밟는 격자 퍼즐 게임. 무료·광고 없음.">
+<meta property="og:image" content="app-title.png">
+<style>
+  :root{
+    --bg:#081317; --bg2:#0d1e24; --card:#0f232b; --line:#1d4048;
+    --head:#eafffb; --text:#bcd6d2; --muted:#7fa0a0;
+    --accent:#16c79a; --accent2:#13a88a; --gold:#ffd24a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Segoe UI Rounded","Apple SD Gothic Neo",system-ui,-apple-system,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#10333b 0%,var(--bg) 60%);
+    color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 72px;}
+  header{text-align:center;padding:56px 20px 20px;}
+  header img.icon{width:104px;height:104px;border-radius:26px;box-shadow:0 10px 40px #000a,0 0 0 1px var(--line);}
+  h1{font-size:56px;letter-spacing:10px;margin:18px 0 4px;color:var(--head);
+    text-shadow:0 0 34px #16c79a55,0 4px 8px #0008;}
+  .tag{color:var(--muted);letter-spacing:5px;font-size:14px;margin-bottom:6px;}
+  .sub{color:var(--text);font-size:17px;margin:10px auto 0;max-width:560px;}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 8px;}
+  .btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:700;font-size:15px;
+    border:1px solid var(--line);background:var(--card);color:var(--head);transition:.15s;}
+  .btn:hover{transform:translateY(-2px);border-color:var(--accent);}
+  .btn.primary{background:linear-gradient(180deg,var(--accent),var(--accent2));color:#04231d;border:none;}
+  .hero{display:block;margin:30px auto;max-width:300px;width:70%;border-radius:22px;
+    box-shadow:0 16px 50px #000a,0 0 0 1px var(--line);}
+  section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;margin:22px 0;}
+  h2{color:var(--head);font-size:21px;margin:0 0 14px;}
+  ul{padding-left:20px;margin:0;}
+  li{margin:7px 0;}
+  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+  .shots img{width:100%;border-radius:14px;border:1px solid var(--line);}
+  .modes{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .mode{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px;}
+  .mode b{color:var(--accent);}
+  .en{color:var(--muted);font-size:14px;}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding-top:10px;}
+  footer a{color:var(--muted);text-decoration:underline;}
+  @media(max-width:560px){h1{font-size:42px;letter-spacing:6px;}.modes{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="icon" src="icon-512.png" alt="CRDL 아이콘">
+    <h1>CRDL</h1>
+    <div class="tag">차 · 례 · 대 · 로</div>
+    <p class="sub">숫자를 <b>1 → N 순서대로</b> 밟는 귀여운 격자 퍼즐.<br>지나간 칸은 다시 못 지나가요. 갇히면 게임 오버!</p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/betona1/APP_CRDL/releases/download/v0.1.0-test.1/CRDL-v0.1.0-test.1.apk">📱 테스트 APK 받기</a>
+      <a class="btn" href="privacy.html">🔒 개인정보처리방침</a>
+      <a class="btn" href="https://github.com/betona1/APP_CRDL">💻 소스코드(GitHub)</a>
+    </div>
+  </header>
+
+  <img class="hero" src="play.gif" alt="CRDL 플레이 화면">
+
+  <section>
+    <h2>🎮 두 가지 모드</h2>
+    <div class="modes">
+      <div class="mode"><b>⛏ 땅파기</b><br>모든 칸을 채우면서 숫자를 순서대로 완성 <span class="en">(도전적)</span></div>
+      <div class="mode"><b>✏ 길잇기</b><br>숫자만 순서대로 이으면 클리어 <span class="en">(가볍게)</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>✨ 특징</h2>
+    <ul>
+      <li>완전 무료 · 광고 없음 · 오프라인 플레이</li>
+      <li>회원가입 불필요 — 개인정보를 전혀 수집하지 않아요</li>
+      <li>20개 언어 지원 (한국어·영어·힌디어·아랍어·일본어·중국어 등)</li>
+      <li>끝없이 이어지는 스테이지와 별점 도전</li>
+      <li>클리어하면 수도꼭지에서 물이 콸콸 흐르는 귀여운 연출 💦</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📸 스크린샷</h2>
+    <div class="shots">
+      <img src="app-title.png" alt="타이틀">
+      <img src="app-map.png" alt="스테이지 맵">
+      <img src="app-play.png" alt="플레이">
+      <img src="app-water.png" alt="클리어 물 연출">
+    </div>
+  </section>
+
+  <section>
+    <h2>About <span class="en">(English)</span></h2>
+    <p class="en">CRDL is a cute grid puzzle: trace the grid with a snake cursor, stepping on the numbers in
+    order 1 → N. You can't re-cross a cell you've passed, and if you get boxed in, it's game over.
+    Two modes (Dig / Path), 20 languages, completely free, no ads, no data collected, offline play.
+    A puzzle first hand-drawn on graph paper 30 years ago — now reborn as an app, built in public.</p>
+  </section>
+
+  <footer>
+    <p>© 2026 betona · <code>com.betona.crdl</code> · Build in Public 🐍<br>
+    <a href="privacy.html">개인정보처리방침 / Privacy Policy</a> ·
+    <a href="https://github.com/betona1/APP_CRDL">GitHub</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
