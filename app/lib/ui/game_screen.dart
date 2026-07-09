@@ -5,6 +5,7 @@ library;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../core/audio.dart';
 import '../core/controller.dart';
 import '../core/game.dart';
 import 'board_painter.dart';
@@ -52,14 +53,25 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
 
   Future<void> _runClearSequence() async {
     HapticFeedback.mediumImpact();
+    ctl.audio.play(Sfx.clear);
     _faucet.value = 0;
     _water.value = 0;
     await _faucet.forward(); // 낙하 + 착지
     HapticFeedback.heavyImpact();
+    ctl.audio.play(Sfx.thud);
+    ctl.audio.play(Sfx.splash);
     final ms = (ctl.game.path.length * 70).clamp(1600, 4200);
     _water.duration = Duration(milliseconds: ms);
+    ctl.audio.startWater(volume: 0.6);
     await _water.forward();
+    ctl.audio.stopWater();
+    ctl.audio.play(Sfx.splash);
     _confetti.forward(from: 0);
+    // 별 딩동댕
+    for (var i = 0; i < ctl.earnedStars; i++) {
+      Future.delayed(Duration(milliseconds: 150 + i * 220),
+          () => ctl.audio.play(Sfx.star));
+    }
     await Future.delayed(const Duration(milliseconds: 450));
     _clearRunning = false;
     ctl.waterFlowDone();
@@ -191,6 +203,10 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
               overflow: TextOverflow.ellipsis,
             ),
           ),
+          _iconBtn(ctl.soundOn ? '🔊' : '🔇', () async {
+            await ctl.toggleSound();
+            setState(() {});
+          }),
         ],
       ),
     );

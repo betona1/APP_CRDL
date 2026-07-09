@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'core/audio.dart';
 import 'core/controller.dart';
 import 'core/progress.dart';
 import 'ui/theme.dart';
@@ -12,8 +13,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   final progress = await Progress.load();
-  runApp(CrdlApp(controller: GameController(progress)));
+  final audio = AudioService(enabled: progress.soundOn);
+  unawaited(audio.init());
+  runApp(CrdlApp(controller: GameController(progress, audio)));
 }
+
+void unawaited(Future<void> f) {}
 
 class CrdlApp extends StatelessWidget {
   final GameController controller;

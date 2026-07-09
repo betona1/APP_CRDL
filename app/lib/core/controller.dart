@@ -3,6 +3,7 @@ library;
 
 import 'dart:async';
 import 'package:flutter/foundation.dart';
+import 'audio.dart';
 import 'game.dart';
 import 'levelgen.dart';
 import 'progress.dart';
@@ -11,6 +12,7 @@ enum ClearPhase { none, playing, waterFlow, banner }
 
 class GameController extends ChangeNotifier {
   final Progress progress;
+  final AudioService audio;
   Genre genre;
   int stage;
 
@@ -25,10 +27,17 @@ class GameController extends ChangeNotifier {
   MoveResult? lastResult;
   String? loseReason;
 
-  GameController(this.progress)
+  GameController(this.progress, this.audio)
       : genre = progress.genre,
         stage = progress.stage(progress.genre) {
     _newBoard();
+  }
+
+  bool get soundOn => audio.enabled;
+  Future<void> toggleSound() async {
+    audio.enabled = !audio.enabled;
+    await progress.setSoundOn(audio.enabled);
+    notifyListeners();
   }
 
   StageConfig get config => stageConfig(stage);
@@ -89,6 +98,7 @@ class GameController extends ChangeNotifier {
       if (game.startAt(r, c)) {
         _startTimer();
         phase = ClearPhase.playing;
+        audio.play(Sfx.start);
         notifyListeners();
         return true;
       }
@@ -105,10 +115,16 @@ class GameController extends ChangeNotifier {
   bool move(MoveDir dir) {
     if (game.over) return false;
     if (game.head == null) return false;
+    final targetBefore = game.target;
     _startTimer();
     final res = game.move(dir);
     lastResult = res;
     if (res == MoveResult.blocked) return false;
+    if (game.target != targetBefore) {
+      audio.play(Sfx.eat);
+    } else if (res == MoveResult.moved) {
+      audio.play(Sfx.move, volume: 0.6);
+    }
     if (res == MoveResult.won) {
       _watch.stop();
       _tick?.cancel();
@@ -117,6 +133,7 @@ class GameController extends ChangeNotifier {
     } else if (res != MoveResult.moved) {
       _watch.stop();
       _tick?.cancel();
+      audio.play(Sfx.lose);
       loseReason = switch (res) {
         MoveResult.lostDeadEnd => '막다른 길! 더 이상 이동할 수 없어요.',
         MoveResult.lostTrapped => '미로처럼 엉켰어요. 갇힌 칸이 생겼습니다.',
