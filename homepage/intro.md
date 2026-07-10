@@ -1,4 +1,4 @@
-# CRDL(차례대로) 소개서 / Brochure
+# Exanode(엑사노드) 소개서 / Brochure
 
 > 홈페이지·보도자료·스토어 등록에 쓰는 **소개/홍보 문안**입니다.
 > 에셋 경로·URL은 [`media-manifest.json`](./media-manifest.json)을 참조하세요.
@@ -15,7 +15,7 @@
 
 ## 전체 설명 (Play 스토어 full)
 ### KO
-**차례대로(CRDL)**는 숫자를 순서대로 잇는 격자 퍼즐 게임입니다.
+**엑사노드(Exanode)**는 숫자를 순서대로 잇는 격자 퍼즐 게임입니다.
 
 귀여운 뱀 커서로 격자를 훑으며 숫자를 **1 → N 순서대로** 밟으세요.
 지나온 칸은 다시 지날 수 없고, 길이 엉켜 갇히면 게임 오버! 스네이크의 짜릿함과
@@ -41,7 +41,7 @@
 개발 과정 전체를 공개하는 **Build in Public** 프로젝트입니다.
 
 ### EN
-**CRDL** is a grid puzzle about linking numbers in order.
+**Exanode** is a grid puzzle about linking numbers in order.
 
 Trace the grid with a cute snake cursor, stepping on the numbers **in order 1 → N**.
 You can't re-cross a cell you've passed, and if you get boxed in, it's game over — the thrill
@@ -60,7 +60,7 @@ A puzzle first hand-drawn on graph paper 30 years ago, now reborn as an app — 
 ## 핵심 정보 (Fact sheet)
 | 항목 | 값 |
 |------|-----|
-| 앱 이름 | CRDL (차례대로) |
+| 앱 이름 | Exanode (엑사노드) |
 | 패키지명 | `com.betona.crdl` |
 | 장르 | 퍼즐 / 캐주얼 |
 | 가격 | 무료 (광고 없음) |
@@ -68,13 +68,13 @@ A puzzle first hand-drawn on graph paper 30 years ago, now reborn as an app — 
 | 언어 | 20개 언어 |
 | 개인정보 | 수집 안 함 · 오프라인 |
 | 개발 | 1인 개발 (betona) · Build in Public |
-| 소스코드 | https://github.com/betona1/APP_CRDL |
-| 개인정보처리방침 | https://betona1.github.io/APP_CRDL/privacy.html |
+| 소스코드 | https://github.com/betona1/APP_EXANODE |
+| 개인정보처리방침 | https://betona1.github.io/APP_EXANODE/privacy.html |
 
 ## 홍보 문구 후보 (SNS / 영상 제목)
 1. 30년 전 모눈종이에 그린 퍼즐, 게임이 되다 🐍 #개발일지
 2. 숫자를 차례대로! 뱀이 물길을 뚫는 퍼즐 게임 🚰
-3. 클리어하면 수돗물이 콸콸💦 직접 만든 퍼즐 게임 CRDL
+3. 클리어하면 수돗물이 콸콸💦 직접 만든 퍼즐 게임 Exanode
 
 ## 해시태그
-`#CRDL #차례대로 #게임개발 #인디게임 #퍼즐게임 #앱개발 #buildinpublic #개발일지 #모바일게임`
+`#Exanode #엑사노드 #게임개발 #인디게임 #퍼즐게임 #앱개발 #buildinpublic #개발일지 #모바일게임`

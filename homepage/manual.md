@@ -1,4 +1,4 @@
-# CRDL(차례대로) 사용 설명서 / User Manual
+# Exanode(엑사노드) 사용 설명서 / User Manual
 
 > 이 문서는 홈페이지 게시용 **설명서**입니다. 한국어 → English 순으로 동일 내용을 담았습니다.
 > 자동화 참조용 메타데이터는 [`media-manifest.json`](./media-manifest.json)을 사용하세요.
@@ -7,8 +7,8 @@
 
 ## 한국어
 
-### CRDL이란?
-**CRDL(차례대로)**는 30년 전 모눈종이에 손으로 설계했던 격자 퍼즐을 모바일 게임으로 되살린 작품입니다.
+### Exanode이란?
+**Exanode(엑사노드)**는 30년 전 모눈종이에 손으로 설계했던 격자 퍼즐을 모바일 게임으로 되살린 작품입니다.
 플레이어는 귀여운 뱀 커서로 격자를 훑으며 숫자를 **1 → N 순서대로** 밟습니다.
 지나간 칸은 다시 지날 수 없고, 길이 엉켜 갇히면 게임 오버입니다.
 
@@ -37,8 +37,8 @@
 
 ## English
 
-### What is CRDL?
-**CRDL** ("one after another") revives a grid puzzle first hand-drawn on graph paper 30 years ago.
+### What is Exanode?
+**Exanode** ("one after another") revives a grid puzzle first hand-drawn on graph paper 30 years ago.
 You trace the grid with a cute snake cursor, stepping on the numbers **in order 1 → N**.
 You can't re-cross a cell you've already passed, and if you get boxed in, it's game over.
 
