@@ -9,7 +9,7 @@ class L10nHi extends L10n {
   L10nHi([String locale = 'hi']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'एक के बाद एक';
@@ -26,7 +26,7 @@ class L10nHi extends L10n {
   }
 
   @override
-  String get guideTitle => 'CRDL कैसे खेलें';
+  String get guideTitle => 'Exanode कैसे खेलें';
 
   @override
   String get guideGoalTitle => '🎯 लक्ष्य';

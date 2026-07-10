@@ -1,11 +1,11 @@
 {
   "@@locale": "zh",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "一个接一个",
   "startAdventure": "开始冒险",
   "howToPlay": "玩法说明",
   "bestBanner": "🏆 最佳 {stage}  ·  ⭐ {stars}",
-  "guideTitle": "CRDL 玩法",
+  "guideTitle": "Exanode 玩法",
   "guideGoalTitle": "🎯 目标",
   "guideGoalBody": "用小蛇光标划过格子，按 1 → N 的顺序踩数字。",
   "guideMoveTitle": "🐍 移动",

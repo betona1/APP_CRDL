@@ -9,7 +9,7 @@ class L10nTh extends L10n {
   L10nTh([String locale = 'th']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'ทีละอันตามลำดับ';
@@ -26,7 +26,7 @@ class L10nTh extends L10n {
   }
 
   @override
-  String get guideTitle => 'วิธีเล่น CRDL';
+  String get guideTitle => 'วิธีเล่น Exanode';
 
   @override
   String get guideGoalTitle => '🎯 เป้าหมาย';

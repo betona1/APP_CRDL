@@ -1,11 +1,11 @@
 {
   "@@locale": "th",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "ทีละอันตามลำดับ",
   "startAdventure": "เริ่มผจญภัย",
   "howToPlay": "วิธีเล่น",
   "bestBanner": "🏆 สถิติ {stage}  ·  ⭐ {stars}",
-  "guideTitle": "วิธีเล่น CRDL",
+  "guideTitle": "วิธีเล่น Exanode",
   "guideGoalTitle": "🎯 เป้าหมาย",
   "guideGoalBody": "ลากเคอร์เซอร์งูไปตามช่อง เหยียบตัวเลขตามลำดับ 1 → N",
   "guideMoveTitle": "🐍 การเคลื่อนที่",

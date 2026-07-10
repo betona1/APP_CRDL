@@ -1,11 +1,11 @@
 {
   "@@locale": "es",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "uno tras otro",
   "startAdventure": "Empezar aventura",
   "howToPlay": "Cómo jugar",
   "bestBanner": "🏆 Mejor {stage}  ·  ⭐ {stars}",
-  "guideTitle": "Cómo jugar a CRDL",
+  "guideTitle": "Cómo jugar a Exanode",
   "guideGoalTitle": "🎯 Objetivo",
   "guideGoalBody": "Recorre la cuadrícula con la serpiente y pisa los números en orden 1 → N.",
   "guideMoveTitle": "🐍 Movimiento",

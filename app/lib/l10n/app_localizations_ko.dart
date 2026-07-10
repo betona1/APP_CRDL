@@ -9,7 +9,7 @@ class L10nKo extends L10n {
   L10nKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => '차 · 례 · 대 · 로';
@@ -26,7 +26,7 @@ class L10nKo extends L10n {
   }
 
   @override
-  String get guideTitle => 'CRDL 시작 가이드';
+  String get guideTitle => 'Exanode 시작 가이드';
 
   @override
   String get guideGoalTitle => '🎯 목표';

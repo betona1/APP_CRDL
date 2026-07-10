@@ -9,7 +9,7 @@ class L10nZh extends L10n {
   L10nZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => '一个接一个';
@@ -26,7 +26,7 @@ class L10nZh extends L10n {
   }
 
   @override
-  String get guideTitle => 'CRDL 玩法';
+  String get guideTitle => 'Exanode 玩法';
 
   @override
   String get guideGoalTitle => '🎯 目标';

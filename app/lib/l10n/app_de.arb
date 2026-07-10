@@ -1,11 +1,11 @@
 {
   "@@locale": "de",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "eins nach dem anderen",
   "startAdventure": "Abenteuer starten",
   "howToPlay": "So wird gespielt",
   "bestBanner": "🏆 Bester {stage}  ·  ⭐ {stars}",
-  "guideTitle": "So spielst du CRDL",
+  "guideTitle": "So spielst du Exanode",
   "guideGoalTitle": "🎯 Ziel",
   "guideGoalBody": "Ziehe mit der Schlange über das Gitter und tritt die Zahlen der Reihe nach 1 → N.",
   "guideMoveTitle": "🐍 Bewegung",

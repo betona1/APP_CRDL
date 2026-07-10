@@ -1,11 +1,11 @@
 {
   "@@locale": "ja",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "じゅんばんに",
   "startAdventure": "冒険をはじめる",
   "howToPlay": "あそびかた",
   "bestBanner": "🏆 ベスト {stage}  ·  ⭐ {stars}",
-  "guideTitle": "CRDLのあそびかた",
+  "guideTitle": "Exanodeのあそびかた",
   "guideGoalTitle": "🎯 目標",
   "guideGoalBody": "ヘビカーソルでマスをなぞり、1 → N の順に数字を踏もう。",
   "guideMoveTitle": "🐍 動き",

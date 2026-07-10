@@ -9,7 +9,7 @@ class L10nMr extends L10n {
   L10nMr([String locale = 'mr']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'एकामागून एक';
@@ -26,7 +26,7 @@ class L10nMr extends L10n {
   }
 
   @override
-  String get guideTitle => 'CRDL कसे खेळायचे';
+  String get guideTitle => 'Exanode कसे खेळायचे';
 
   @override
   String get guideGoalTitle => '🎯 ध्येय';

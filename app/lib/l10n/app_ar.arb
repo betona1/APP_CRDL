@@ -1,11 +1,11 @@
 {
   "@@locale": "ar",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "واحدًا تلو الآخر",
   "startAdventure": "ابدأ المغامرة",
   "howToPlay": "كيفية اللعب",
   "bestBanner": "🏆 الأفضل {stage}  ·  ⭐ {stars}",
-  "guideTitle": "كيفية لعب CRDL",
+  "guideTitle": "كيفية لعب Exanode",
   "guideGoalTitle": "🎯 الهدف",
   "guideGoalBody": "مرّر مؤشر الأفعى على الشبكة، ودُس على الأرقام بالترتيب 1 → N.",
   "guideMoveTitle": "🐍 الحركة",

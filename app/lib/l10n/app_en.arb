@@ -1,9 +1,9 @@
 {
   "@@locale": "en",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "@appTitle": { "description": "App name (brand, keep as-is)" },
   "tagline": "one after another",
-  "@tagline": { "description": "Subtitle under the CRDL logo on the title screen" },
+  "@tagline": { "description": "Subtitle under the Exanode logo on the title screen" },
   "startAdventure": "Start Adventure",
   "@startAdventure": { "description": "Main button on the title screen" },
   "howToPlay": "How to Play",
@@ -13,7 +13,7 @@
     "description": "Best progress chip on the title screen",
     "placeholders": { "stage": { "type": "int" }, "stars": { "type": "int" } }
   },
-  "guideTitle": "How to Play CRDL",
+  "guideTitle": "How to Play Exanode",
   "@guideTitle": { "description": "Header of the how-to-play sheet" },
   "guideGoalTitle": "🎯 Goal",
   "guideGoalBody": "Trace the grid with the snake cursor, stepping on the numbers in order 1 → N.",

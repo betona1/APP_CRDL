@@ -9,7 +9,7 @@ class L10nAr extends L10n {
   L10nAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'واحدًا تلو الآخر';
@@ -26,7 +26,7 @@ class L10nAr extends L10n {
   }
 
   @override
-  String get guideTitle => 'كيفية لعب CRDL';
+  String get guideTitle => 'كيفية لعب Exanode';
 
   @override
   String get guideGoalTitle => '🎯 الهدف';

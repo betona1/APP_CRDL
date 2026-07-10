@@ -9,7 +9,7 @@ class L10nTa extends L10n {
   L10nTa([String locale = 'ta']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'ஒன்றன் பின் ஒன்றாக';
@@ -26,7 +26,7 @@ class L10nTa extends L10n {
   }
 
   @override
-  String get guideTitle => 'CRDL எப்படி விளையாடுவது';
+  String get guideTitle => 'Exanode எப்படி விளையாடுவது';
 
   @override
   String get guideGoalTitle => '🎯 இலக்கு';

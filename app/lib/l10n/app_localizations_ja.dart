@@ -9,7 +9,7 @@ class L10nJa extends L10n {
   L10nJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'じゅんばんに';
@@ -26,7 +26,7 @@ class L10nJa extends L10n {
   }
 
   @override
-  String get guideTitle => 'CRDLのあそびかた';
+  String get guideTitle => 'Exanodeのあそびかた';
 
   @override
   String get guideGoalTitle => '🎯 目標';

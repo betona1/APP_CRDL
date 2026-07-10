@@ -9,7 +9,7 @@ class L10nRu extends L10n {
   L10nRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'один за другим';
@@ -26,7 +26,7 @@ class L10nRu extends L10n {
   }
 
   @override
-  String get guideTitle => 'Как играть в CRDL';
+  String get guideTitle => 'Как играть в Exanode';
 
   @override
   String get guideGoalTitle => '🎯 Цель';

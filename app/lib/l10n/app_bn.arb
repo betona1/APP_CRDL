@@ -1,11 +1,11 @@
 {
   "@@locale": "bn",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "একের পর এক",
   "startAdventure": "অ্যাডভেঞ্চার শুরু করুন",
   "howToPlay": "কীভাবে খেলবেন",
   "bestBanner": "🏆 সেরা {stage}  ·  ⭐ {stars}",
-  "guideTitle": "CRDL কীভাবে খেলবেন",
+  "guideTitle": "Exanode কীভাবে খেলবেন",
   "guideGoalTitle": "🎯 লক্ষ্য",
   "guideGoalBody": "সাপ কার্সার দিয়ে গ্রিডে চলুন এবং সংখ্যাগুলোতে 1 → N ক্রমে পা রাখুন।",
   "guideMoveTitle": "🐍 চলাচল",

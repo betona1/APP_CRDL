@@ -1,11 +1,11 @@
 {
   "@@locale": "hi",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "एक के बाद एक",
   "startAdventure": "साहसिक शुरू करें",
   "howToPlay": "कैसे खेलें",
   "bestBanner": "🏆 सर्वश्रेष्ठ {stage}  ·  ⭐ {stars}",
-  "guideTitle": "CRDL कैसे खेलें",
+  "guideTitle": "Exanode कैसे खेलें",
   "guideGoalTitle": "🎯 लक्ष्य",
   "guideGoalBody": "साँप कर्सर से ग्रिड पर चलें और संख्याओं पर 1 → N क्रम में कदम रखें।",
   "guideMoveTitle": "🐍 चाल",

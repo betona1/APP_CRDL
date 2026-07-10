@@ -207,7 +207,7 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
           const SizedBox(width: 6),
           const Mascot(size: 30),
           const SizedBox(width: 8),
-          const Text('CRDL',
+          const Text('Exanode',
               style: TextStyle(
                   fontFamily: numFont,
                   fontSize: 21,

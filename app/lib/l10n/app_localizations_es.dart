@@ -9,7 +9,7 @@ class L10nEs extends L10n {
   L10nEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'uno tras otro';
@@ -26,7 +26,7 @@ class L10nEs extends L10n {
   }
 
   @override
-  String get guideTitle => 'Cómo jugar a CRDL';
+  String get guideTitle => 'Cómo jugar a Exanode';
 
   @override
   String get guideGoalTitle => '🎯 Objetivo';

@@ -116,7 +116,7 @@ class _TitleScreenState extends State<TitleScreen>
               child: const Mascot(size: 150),
             ),
             const SizedBox(height: 4),
-            const Text('CRDL',
+            const Text('Exanode',
                 style: TextStyle(
                   fontFamily: numFont,
                   fontSize: 62,

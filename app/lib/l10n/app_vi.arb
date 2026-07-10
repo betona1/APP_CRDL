@@ -1,11 +1,11 @@
 {
   "@@locale": "vi",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "lần lượt từng cái",
   "startAdventure": "Bắt đầu phiêu lưu",
   "howToPlay": "Cách chơi",
   "bestBanner": "🏆 Tốt nhất {stage}  ·  ⭐ {stars}",
-  "guideTitle": "Cách chơi CRDL",
+  "guideTitle": "Cách chơi Exanode",
   "guideGoalTitle": "🎯 Mục tiêu",
   "guideGoalBody": "Lướt con trỏ rắn qua lưới, giẫm lên các số theo thứ tự 1 → N.",
   "guideMoveTitle": "🐍 Di chuyển",

@@ -9,7 +9,7 @@ class L10nVi extends L10n {
   L10nVi([String locale = 'vi']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'lần lượt từng cái';
@@ -26,7 +26,7 @@ class L10nVi extends L10n {
   }
 
   @override
-  String get guideTitle => 'Cách chơi CRDL';
+  String get guideTitle => 'Cách chơi Exanode';
 
   @override
   String get guideGoalTitle => '🎯 Mục tiêu';

@@ -1,11 +1,11 @@
 {
   "@@locale": "te",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "ఒకదాని తర్వాత ఒకటి",
   "startAdventure": "సాహసం ప్రారంభించు",
   "howToPlay": "ఎలా ఆడాలి",
   "bestBanner": "🏆 అత్యుత్తమం {stage}  ·  ⭐ {stars}",
-  "guideTitle": "CRDL ఎలా ఆడాలి",
+  "guideTitle": "Exanode ఎలా ఆడాలి",
   "guideGoalTitle": "🎯 లక్ష్యం",
   "guideGoalBody": "పాము కర్సర్‌తో గ్రిడ్‌పై కదులుతూ, సంఖ్యలను 1 → N క్రమంలో తొక్కండి.",
   "guideMoveTitle": "🐍 కదలిక",

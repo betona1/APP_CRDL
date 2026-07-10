@@ -1,11 +1,11 @@
 {
   "@@locale": "pt",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "um após o outro",
   "startAdventure": "Começar aventura",
   "howToPlay": "Como jogar",
   "bestBanner": "🏆 Melhor {stage}  ·  ⭐ {stars}",
-  "guideTitle": "Como jogar CRDL",
+  "guideTitle": "Como jogar Exanode",
   "guideGoalTitle": "🎯 Objetivo",
   "guideGoalBody": "Percorra a grade com a cobra e pise nos números em ordem 1 → N.",
   "guideMoveTitle": "🐍 Movimento",

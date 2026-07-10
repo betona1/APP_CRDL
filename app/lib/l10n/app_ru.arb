@@ -1,11 +1,11 @@
 {
   "@@locale": "ru",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "один за другим",
   "startAdventure": "Начать приключение",
   "howToPlay": "Как играть",
   "bestBanner": "🏆 Лучший {stage}  ·  ⭐ {stars}",
-  "guideTitle": "Как играть в CRDL",
+  "guideTitle": "Как играть в Exanode",
   "guideGoalTitle": "🎯 Цель",
   "guideGoalBody": "Ведите змейку по сетке, наступая на числа по порядку 1 → N.",
   "guideMoveTitle": "🐍 Движение",

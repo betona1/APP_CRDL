@@ -1,11 +1,11 @@
 {
   "@@locale": "tr",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "birbiri ardına",
   "startAdventure": "Maceraya başla",
   "howToPlay": "Nasıl oynanır",
   "bestBanner": "🏆 En iyi {stage}  ·  ⭐ {stars}",
-  "guideTitle": "CRDL nasıl oynanır",
+  "guideTitle": "Exanode nasıl oynanır",
   "guideGoalTitle": "🎯 Amaç",
   "guideGoalBody": "Yılan imleçle ızgarada ilerle ve sayılara 1 → N sırasıyla bas.",
   "guideMoveTitle": "🐍 Hareket",

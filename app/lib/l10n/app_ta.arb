@@ -1,11 +1,11 @@
 {
   "@@locale": "ta",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "ஒன்றன் பின் ஒன்றாக",
   "startAdventure": "சாகசத்தைத் தொடங்கு",
   "howToPlay": "எப்படி விளையாடுவது",
   "bestBanner": "🏆 சிறந்த {stage}  ·  ⭐ {stars}",
-  "guideTitle": "CRDL எப்படி விளையாடுவது",
+  "guideTitle": "Exanode எப்படி விளையாடுவது",
   "guideGoalTitle": "🎯 இலக்கு",
   "guideGoalBody": "பாம்பு கர்சரால் கட்டத்தில் நகர்ந்து, எண்களை 1 → N வரிசையில் மிதியுங்கள்.",
   "guideMoveTitle": "🐍 நகர்வு",

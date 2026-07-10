@@ -1,11 +1,11 @@
 {
   "@@locale": "id",
-  "appTitle": "CRDL",
+  "appTitle": "Exanode",
   "tagline": "satu demi satu",
   "startAdventure": "Mulai Petualangan",
   "howToPlay": "Cara Bermain",
   "bestBanner": "🏆 Terbaik {stage}  ·  ⭐ {stars}",
-  "guideTitle": "Cara Bermain CRDL",
+  "guideTitle": "Cara Bermain Exanode",
   "guideGoalTitle": "🎯 Tujuan",
   "guideGoalBody": "Telusuri grid dengan kursor ular, injak angka secara berurutan 1 → N.",
   "guideMoveTitle": "🐍 Gerakan",

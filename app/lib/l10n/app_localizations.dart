@@ -136,10 +136,10 @@ abstract class L10n {
   /// App name (brand, keep as-is)
   ///
   /// In en, this message translates to:
-  /// **'CRDL'**
+  /// **'Exanode'**
   String get appTitle;
 
-  /// Subtitle under the CRDL logo on the title screen
+  /// Subtitle under the Exanode logo on the title screen
   ///
   /// In en, this message translates to:
   /// **'one after another'**
@@ -166,7 +166,7 @@ abstract class L10n {
   /// Header of the how-to-play sheet
   ///
   /// In en, this message translates to:
-  /// **'How to Play CRDL'**
+  /// **'How to Play Exanode'**
   String get guideTitle;
 
   /// No description provided for @guideGoalTitle.

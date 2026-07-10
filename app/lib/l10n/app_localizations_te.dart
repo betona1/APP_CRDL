@@ -9,7 +9,7 @@ class L10nTe extends L10n {
   L10nTe([String locale = 'te']) : super(locale);
 
   @override
-  String get appTitle => 'CRDL';
+  String get appTitle => 'Exanode';
 
   @override
   String get tagline => 'ఒకదాని తర్వాత ఒకటి';
@@ -26,7 +26,7 @@ class L10nTe extends L10n {
   }
 
   @override
-  String get guideTitle => 'CRDL ఎలా ఆడాలి';
+  String get guideTitle => 'Exanode ఎలా ఆడాలి';
 
   @override
   String get guideGoalTitle => '🎯 లక్ష్యం';
