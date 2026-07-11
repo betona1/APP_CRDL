@@ -40,6 +40,18 @@
 
 <p align="center"><sub>타이틀 · 스테이지 맵 · 플레이 · 수돗물 클리어 · 별점 배너 (모두 실제 앱 화면)</sub></p>
 
+### 📸 실기기 화면 (삼성 갤럭시 · SM-F766N · Android 16)
+
+<p align="center">
+  <img src="docs/device/title.png" width="18%" alt="실기기 타이틀 — Exanode 엑사노드">
+  <img src="docs/device/map.png" width="18%" alt="실기기 스테이지 맵">
+  <img src="docs/device/play.png" width="18%" alt="실기기 게임 플레이 — 뱀 경로">
+  <img src="docs/device/water-flow.png" width="18%" alt="실기기 수돗물 쏟아짐">
+  <img src="docs/device/water-full.png" width="18%" alt="실기기 물 가득 콸콸 클리어">
+</p>
+
+<p align="center"><sub>실제 기기에서 직접 촬영 — 타이틀 · 맵 · 플레이 · 수돗물 콸콸💦 클리어</sub></p>
+
 ## ▶ 바로 해보기
 
 ```
